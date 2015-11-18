@@ -1,11 +1,6 @@
 #!/usr/bin/python
 from itertools import permutations
 
-def tour_len(t, d):
-    assert len(t) == len(d) - 1
-    return d[0][t[0]] + sum(d[t[i]][t[i+1]] for i in range(len(t) - 1)) +\
-           d[t[-1]][0]
-
 def tsp_dp_solve(d):
     def memoize(f):
         memory = {}

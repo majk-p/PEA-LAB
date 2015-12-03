@@ -37,7 +37,7 @@ if t == 'time':
         averages.append([n, dynSum/100.0, fptasSum/100.0, abs(dynSum-fptasSum)/float(dynSum)*100])
         j += 1
         fptasSum, dynSum = 0, 0
-    filename = "tests/res_{0}_{1}_{3}_t_{2}".format(prefix, str(step), str(approx), str(minsize))
+    filename = "results/res_{0}_{1}_{3}_t_{2}".format(prefix, str(step), str(approx), str(minsize))
     with open(filename, 'w') as f:
         for n in averages:
             print n
@@ -53,7 +53,7 @@ elif t == 'quality':
         dyn, _ = knapsack(n, c, w)
         q = abs(dyn-fptas)/float(dyn)
         res.append([n, dyn, fptas, q, q * 100])
-    filename = "tests/res_{0}_{1}_{3}_q_{2}.csv".format(prefix, str(step), str(approx), str(minsize))
+    filename = "results/res_{0}_{1}_{3}_q_{2}.csv".format(prefix, str(step), str(approx), str(minsize))
     with open(filename, 'w') as f:
         for n in res:
             print n
